@@ -1,0 +1,39 @@
+{
+  "name": "dropdown",
+  "version": "1.0.0",
+  "description": "Dropdown box with ReactJS",
+  "main": "lib/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dotronglong/react-dropdown.git"
+  },
+  "keywords": [
+    "react",
+    "dropdown",
+    "selector"
+  ],
+  "author": "Long Do <me@dotronglong.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dotronglong/react-dropdown/issues"
+  },
+  "homepage": "https://github.com/dotronglong/react-dropdown#readme",
+  "peerDependencies": {
+    "react": "^0.14.7",
+    "react-dom": "^0.14.7"
+  },
+  "devDependencies": {
+    "rackt-cli": "^0.5.4",
+    "react": "^0.14.7",
+    "react-dom": "^0.14.7",
+    "react-modal": "rackt/react-modal",
+    "react-addons-test-utils": "^0.14.7"
+  },
+  "dependencies": {
+    "classnames": "^2.2",
+    "js-stylesheet": "^0.0.1"
+  }
+}
