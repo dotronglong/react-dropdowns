@@ -1,8 +1,1 @@
-import Dropdown from './components/Dropdown.react';
-
-window.onload = () => {
-  ReactDOM.render(
-    <Dropdown />,
-    document.getElementById('example')
-  )
-}
+module.exports = require('./components/Dropdown.react');

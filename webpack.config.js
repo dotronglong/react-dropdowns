@@ -1,14 +1,16 @@
-const webpack = require('webpack');
+var path = require('path');
 
 module.exports = {
-  entry: './src/app.js',
+  entry: {
+    app: path.join(__dirname, 'src/app.js'),
+    test: path.join(__dirname, 'example/app.js')
+  },
   output: {
-    path: './dist',
-    filename: 'bundle.js'
+    filename: '[name].js'
   },
   module: {
     loaders: [{
-      test: /\.jsx?$/,
+      test: /\.js?$/,
       exclude: /node_modules/,
       loader: 'babel',
     }]
