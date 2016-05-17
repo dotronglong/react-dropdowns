@@ -8,10 +8,18 @@ export default class Dropdown extends React.Component {
     super(props);
   }
 
+  static defaultProps = {
+    label: "Select an item"
+  }
+
+  static propTypes = {
+    label: React.PropTypes.string
+  }
+
   render() {
     return (
       <div>
-        <ResultText />
+        <ResultText label={this.props.label}/>
         <SearchInput />
         <List />
       </div>

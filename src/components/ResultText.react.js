@@ -8,7 +8,7 @@ export default class ResultText extends React.Component {
   render() {
     return (
       <div>
-      <span placeholder="Select something"></span>
+      <span>{this.props.label}</span>
       <i title="dropdown-arrow"></i>
       </div>
     );
