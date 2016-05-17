@@ -46,8 +46,14 @@
 
 	'use strict';
 
-	module.exports = {
-	  Dropdown: __webpack_require__(1)
+	var _Dropdown = __webpack_require__(1);
+
+	var _Dropdown2 = _interopRequireDefault(_Dropdown);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	window.onload = function () {
+	  ReactDOM.render(React.createElement(_Dropdown2.default, null), document.getElementById('example'));
 	};
 
 /***/ },

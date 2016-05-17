@@ -1,10 +1,22 @@
 const gulp = require('gulp');
-const babel = require('gulp-babel');
-const sourcemaps = require('gulp-sourcemaps');
-const log = require('./log');
-const browser = require('./browser');
+const webpack = require('webpack');
 
 const config = {
+  webpack: {
+    context: __dirname + '/../src',
+    entry: 'app.js',
+    output: {
+      path: __dirname + "/../dist",
+      filename: "bundle.js"
+    },
+    module: {
+      loaders: [{
+        test: /\.jsx?$/,
+        exclude: /node_modules/,
+        loader: 'babel',
+      }]
+    }
+  },
   src: ['src/**/*.js'],
   babel: {
     presets: [
@@ -18,32 +30,25 @@ const config = {
   },
   dist: 'dist'
 };
-
-gulp.task('bundle', ['build'], function() {
-  browser.build({
-    input: './dist/main.js',
-    output: './dist/bundle.js'
-  });
-});
-
+//
 // gulp.task('build-sourcemaps', function() {
 //   gulp.src(config.src)
 //     .pipe(sourcemaps.init())
 //     .pipe(babel(config.babel))
 //     .pipe(log.all('babel'))
 //     .pipe(sourcemaps.write('.'))
-//     .pipe(gulp.dest(config.dist));
+//     .pipe(gulp.dest(config.dist))
+//     .pipe(bundle());
 // });
 
 gulp.task('build', function() {
-  gulp.src(config.src)
-    .pipe(babel(config.babel))
-    .pipe(log.all('babel'))
-    .pipe(gulp.dest(config.dist))
+  webpack(config.webpack, function(err, result) {
+    // console.log(err, result);
+  });
 });
 
 gulp.task('watch', function() {
   gulp.watch(config.src, ['build']);
 });
 
-gulp.task('default', ['bundle']);
+gulp.task('default', ['build']);
