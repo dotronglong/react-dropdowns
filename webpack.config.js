@@ -1,10 +1,13 @@
 var path = require('path');
 
+if (process.env.NODE_ENV === 'development') {
+  var entry = path.join(__dirname, 'example/app.js');
+} else {
+  var entry = path.join(__dirname, 'src/app.js');
+}
+
 module.exports = {
-  entry: {
-    app: path.join(__dirname, 'src/app.js'),
-    test: path.join(__dirname, 'example/app.js')
-  },
+  entry: entry,
   output: {
     filename: '[name].js'
   },

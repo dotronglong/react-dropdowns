@@ -21,7 +21,7 @@
   "scripts": {
     "test": "./node_modules/.bin/rackt test --single-run --browsers Firefox",
     "start": "./node_modules/.bin/rackt server",
-    "build": "./node_modules/.bin/rackt build"
+    "dev": "NODE_ENV=development gulp watch"
   },
   "jest": {
     "unmockedModulePathPatterns": [
